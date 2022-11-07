@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cotizador - Coptom</title>
+</head>
+<body>
+    <header>
+        <div class="tituloContenedor">
+            <h1>Coptom</h1>
+            <p>Servicio Técnico</p>
+        </div>
+        <div class="navContenedor">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#" class="activo">Cotizador</a>
+                    </li>
+                    <li>
+                        <a href="#" class="inactivo">Próximamente</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="cotizador" id="cotizador">
+            <div class="cabecera">
+                <div class="botonizq">
+                    <button id="atrasBtn"><</button>
+                </div>
+                <div class="totalParcial">
+                    <h2>Total parcial: <span class="dinero" id="monto">$10.000</span></h2>
+                </div>
+                <div class="botonder">
+                    <button id="siguienteBtn">></button>
+                </div>
+            </div>
+            <div class="formulario" id="formulario">
+                <h3 id="tituloFormulario">Seleccione su servicio</h3>
+                <div id="formularioOpciones" class="inicial">
+                    <input type="radio" name="servicio" id="servicios" value="formateo"> Formateo
+                    <br>
+                    <input type="radio" name="servicio" id="servicios" value="mantencion"> Mantención
+                </div>
+                <div id="formularioOpciones" class="formateo1">
+                    <input type="radio" name="sisOperativo" id="sisOperativo" value="win11"> Windows 11
+                    <br>
+                    <input type="radio" name="sisOperativo" id="sisOperativo" value="win10"> Windows 10
+                    <br>
+                    <input type="radio" name="sisOperativo" id="sisOperativo" value="win8"> Windows 8
+                    <br>
+                    <input type="radio" name="sisOperativo" id="sisOperativo" value="win7"> Windows 7
+                    <br>
+                    <input type="radio" name="sisOperativo" id="sisOperativo" value="linux"> Linux u otro
+                </div>
+                <div id="formularioOpciones" class="formateo2">
+                    <input type="radio" name="software" id="software" value="basico"> Básico <span class="precioOp">$0</span> (Office + Navegador + Controladores)
+                    <br>
+                    <input type="radio" name="software" id="software" value="completo"> Completo <span class="precioOp">$3.000</span> (Plan básico + Antivirus + Programas de mantenimiento)
+                    <br>
+                    <input type="radio" name="software" id="software" value="custom"> Customizado <span class="precioOp">$5.000</span> (Plan completo + 3 programas adicionales)
+                    <br>
+                </div>
+                <div id="formularioOpciones" class="formateo3">
+                    <input type="radio" name="respaldo" id="respaldo" value="norespaldo"> No <span class="precioOp">$0</span> (Se eliminará todo)
+                    <br>
+                    <input type="radio" name="respaldo" id="respaldo" value="men100"> Sí, menos de 100GB <span class="precioOp">$1.000</span> (Se respaldarán 100 o menos GB de datos)
+                    <br>
+                    <input type="radio" name="respaldo" id="respaldo" value="mas100"> Sí, entre 101GB y 500GB <span class="precioOp">$3.000</span> (Se respaldarán entre 101 y 500GB de datos)
+                    <br>
+                </div>
+                <div id="formularioOpciones" class="final">
+                    <form action="https://formspree.io/f/mqkjgoea" method="post" class="formFinal">
+                        <h4>Cotizacion actual:</h3>
+                        <div class="cotizacionContenedor">
+                            <textarea name="cotizacionTexto" id="cotTexto" class="textoCotizacion"></textarea>
+                        </div>
+                        <div class="datos">
+                            <div class="dato">
+                                Nombre: 
+                                <input type="text" name="nombre">
+                            </div>
+                            <div class="dato">
+                                Teléfono:
+                                <input type="tel" name="telefono">
+                            </div>
+                            <div class="dato">
+                                Dirección:
+                                <input type="text" name="direccion">
+                            </div>
+                            <div class="dato">
+                                Fecha de trabajo:
+                                <input type="date" name="fecha">
+                            </div>
+                            
+                            <div class="dato">
+                                <button type="submit">Enviar cotización</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="cotizador.js"></script>
+</body>
+</html>
