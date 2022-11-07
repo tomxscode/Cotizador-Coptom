@@ -84,6 +84,10 @@ siguienteBtn.addEventListener("click", function() {
                     titulo.innerHTML = "Seleccione el sistema operativo (rec. Windows 10)";
                     break;
                 case "mantencion":
+                    mostrarFormularioPorClase("mantenimiento1");
+                    ocultarFormularioPorClase("inicial");
+                    cotizacion += "--- MANTENIMIENTO ---\n";
+                    titulo.innerHTML = "Seleccione su tipo de equipo";
                     break;
             }
         } else {
@@ -146,7 +150,58 @@ siguienteBtn.addEventListener("click", function() {
         } else {
             alert("Debe seleccionar si necesita respaldo o no");
         }
-    } else if (actual == "final") {
+    } else if (actual == "mantenimiento1") {
+        let manActivo = document.querySelector('input[name="tipoequipo"]:checked');
+        if (manActivo) {
+            switch (manActivo.value) {
+                case "notebook":
+                    montoParcial += 5000;
+                    cotizacion += "Notebook $5.000\n";
+                    break;
+                case "pcescritorio":
+                    montoParcial += 10000;
+                    cotizacion += "PC Escritorio: $1.000\n";
+                    break;
+            }
+            mostrarFormularioPorClase("mantenimiento2");
+            titulo.innerHTML = "¿Cambio de pasta térmica?";
+            ocultarFormularioPorClase("mantenimiento1");
+        } else {
+            alert("Debe seleccionar una opción");
+        }
+    } /*else if (actual == "mantenimiento2") {
+        let manActivo = document.querySelector('input[name="pastatermica"]:checked');
+        if (manActivo) {
+            switch (manActivo.value) {
+                case "si":
+                    montoParcial += 5000;
+                    cotizacion += "Pasta térmica 6.5W/mK: $5.000\n";
+                    break;
+                case "sialtoren":
+                    montoParcial += 8000;
+                    cotizacion += "Pasta térmica 14.5W/mK: $8.000\n";
+                    break;
+                case "sibajo":
+                    montoParcial += 3000;
+                    cotizacion += "Pasta térmica 1.0W/mK: $3.000\n";
+                    break;
+                case "sicliente":
+                    montoParcial += 1000;
+                    cotizacion += "Pasta térmica del cliente: $1.000\n";
+                    break;
+                case "no":
+                    montoParcial += 0;
+                    cotizacion += "Sin cambio de pasta térmica\n";
+                    break;
+            }
+            mostrarFormularioPorClase("mantenimiento3");
+            titulo.innerHTML("¿Limpieza interior?");
+            ocultarFormularioPorClase("mantenimiento2");
+        } else {
+            alert("Debe seleccionar una opción");
+        }
+    }*/
+    else if (actual == "final") {
         // Mostrar cotizacion actual
     }
     console.log(cotizacion)
@@ -156,5 +211,5 @@ siguienteBtn.addEventListener("click", function() {
 })
 
 //datoOculto.value = "hola\ncomo\nestas";
-mostrarFormularioPorClase("inicial");
-reset();
+mostrarFormularioPorClase("inicial"); // cual form muestra
+reset(); // establece todo a 0
